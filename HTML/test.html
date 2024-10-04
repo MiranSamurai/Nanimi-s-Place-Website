@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanami's Place Menu</title>
+    <link rel="stylesheet" href="Style.css"/>
+    <style>
+        /* Font Definitions */
+        @font-face {
+            src: url(fonts/ADLaMDisplay-Regular.ttf);
+            font-family: adlam;
+        }
+        @font-face {
+            src: url(fonts/Gaegu-Light.ttf);
+            font-family: gaegu;
+        }
+        @font-face {
+            src: url(fonts/Quicksand-Light.ttf);
+            font-family: Quicksand;
+        }
+        @font-face {
+            src: url(fonts/Comfy-Feeling.otf);
+            font-family: comfy;
+        }
+
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: gaegu, sans-serif;
+        }
+
+        #header {
+            background-color: brown;
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: adlam, sans-serif;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        #menu {
+            position: relative;
+            top: 20px;
+            right: 20px;
+            font-family: gaegu, sans-serif;
+            font-size: 1.5em;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        a:link, a:visited {
+            color: rgba(0, 0, 0, 0.98);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        a:hover {
+            color: lightblue;
+        }
+
+        hr {
+            margin-top: 20px;
+        }
+
+        img {
+            margin: 0;
+            position: relative;
+            top: 11px;
+        }
+
+        #p1 {
+            position: relative;
+            top: 50px;
+            left: 300px;
+            font-size: 3.5em;
+            font-family: comfy, sans-serif;
+        }
+
+        #p2 {
+            position: relative;
+            top: 50px;
+            left: 20px;
+            font-size: 1.5em;
+        }
+
+        /* Container and Menu Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5em;
+        }
+
+        .menu {
+            font-family: gaegu, sans-serif;
+            font-size: 16px;
+            margin-bottom: 2em;
+        }
+
+        .menu-group-heading {
+            margin: 0;
+            padding-bottom: 1em;
+            border-bottom: 2px solid #ccc;
+            font-size: 1.5em;
+        }
+
+        .menu-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5em;
+            padding: 1.5em 0;
+            font-size: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-item-img {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            object-fit: cover;
+            margin-right: 1.5em;
+        }
+
+        .menu-item-text {
+            flex-grow: 1;
+        }
+
+        .menu-item-heading {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 0.5em 0;
+        }
+
+        .menu-item-name {
+            margin-right: 1.5em;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .menu-item-price {
+            font-weight: bold;
+        }
+
+        .menu-item-desc {
+            line-height: 1.6;
+            transition: color 0.3s ease;
+            cursor: pointer; /* Indicates interactivity */
+        }
+
+        /* Responsive Styles */
+        @media screen and (min-width: 992px) {
+            .menu-group {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .menu-item-img {
+                width: 125px;
+                height: 125px;
+            }
+        }
+
+        /* Optional: Styles for Hover Effect */
+        .menu-item-desc:hover {
+            color: lightblue; /* Changes text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>    
+        <h1 id="header">Nanami's Place</h1>
+    </header>
+    <nav id="menu">
+        <a href="Main.html" target="_blank">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="https://www.google.com/">ABOUT US</a>
+        <a href="https://www.google.com/">STAFF</a>
+        <a href="https://www.google.com/">EVENTS</a>
+    </nav>
+    <hr>
+    <main class="container">
+        <!-- Soup Section -->
+        <div class="menu">
+            <h2 class="menu-group-heading"><b>Soup</b></h2>
+            <div class="menu-group">
+                <div class="menu-item">
+                    <img src="images/soup2.jpg" alt="Shrimp Soup" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Shrimp Soup</span>
+                            <span class="menu-item-price">3,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="A delightful blend of fresh shrimp and aromatic herbs.">
+                            Filling And Tasty
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/soup1.jpg" alt="Lentils" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Lentils</span>
+                            <span class="menu-item-price">2,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Easy On The Stomach, perfect for a light meal.">
+                            Easy On The Stomach
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/soup4.png" alt="Miso Soup" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Miso Soup</span>
+                            <span class="menu-item-price">5,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Eat It While It's Still Hot and fresh!">
+                            Eat It While Its Still Hot
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/soup3.png" alt="Mushroom Soup" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Mushroom Soup</span>
+                            <span class="menu-item-price">3,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="One spoonful closer to happiness! Enjoy the rich mushroom flavor.">
+                            One spoonful closer to happiness!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Course Section -->
+        <div class="menu">
+            <h2 class="menu-group-heading"><b>Main Course</b></h2>
+            <div class="menu-group">
+                <div class="menu-item">
+                    <img src="images/sushi2.jpg" alt="Original Sushi" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Original Sushi</span>
+                            <span class="menu-item-price">15,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Enjoy the Taste Of The Original Plain Old Sushi, crafted with care.">
+                            Enjoy The Taste Of The Original Plain Old Sushi 
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/californiajpg.jpg" alt="California Roll" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">California Roll</span>
+                            <span class="menu-item-price">20,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="A Japanese Piece Of California, blending fresh ingredients with local flavors.">
+                            A Japanese Piece Of California
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/sashimi.jpg" alt="Sashimi" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Sashimi</span>
+                            <span class="menu-item-price">18,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="It’s not for everyone, but it's perfect for the right one. Fresh and pure.">
+                            It’s not for everyone, but it's perfect for the right one.
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/uramaki.jpg" alt="Uramaki" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Uramaki</span>
+                            <span class="menu-item-price">24,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Enjoy the Delightful Treats That Pandas Can't Resist! A flavorful experience.">
+                            enjoy the Delightful Treats That Pandas Can't Resist!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/makijpg.jpg" alt="Maki" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Maki</span>
+                            <span class="menu-item-price">13,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Why settle for cravings when you can indulge in Maki, perfectly rolled for your enjoyment.">
+                            Why settle for cravings when you can indulge in Maki
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/Temaki.jpg" alt="Temaki" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Temaki</span>
+                            <span class="menu-item-price">21,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Ice cream infused with the essence of the ocean! A unique twist to Temaki.">
+                            ice cream infused with the essence of the ocean!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/Dragon-Roll.jpg" alt="The Dragon Roll" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">The Dragon Roll</span>
+                            <span class="menu-item-price">3,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Relax! No dragons were harmed in the making of this flavorful delight.">
+                            Relax! No dragons were harmed in the making of this!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/lemon-roll.png" alt="Lemon Roll" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Lemon Roll</span>
+                            <span class="menu-item-price">17,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Why not brighten it up with a squeeze of lemon? A zesty twist to your meal.">
+                            Why not brighten it up with a squeeze of lemon?
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/Spicy+Tuna.png" alt="Spicy Tuna Roll" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Spicy Tuna Roll</span>
+                            <span class="menu-item-price">24,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Discover the perfect harmony of spice and sea in every bite! A fiery delight.">
+                            Discover the perfect harmony of spice and sea in every bite!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/nagiri.jpg" alt="Nagiri" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Nagiri</span>
+                            <span class="menu-item-price">18,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="The perfect combination of sea and land! Fresh and satisfying Nagiri for your palate.">
+                            the perfect combination of sea and land!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dessert Section -->
+        <div class="menu">
+            <h2 class="menu-group-heading"><b>Dessert</b></h2>
+            <div class="menu-group">
+                <div class="menu-item">
+                    <img src="images/hanami.jpg" alt="Hanami Dango" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Hanami Dango</span>
+                            <span class="menu-item-price">8,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Enjoy The Taste Of Japanese Sweetest SuperStar! A delightful treat.">
+                            Enjoy The Taste Of Japanese Sweetest SuperStar!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/sakura.jpg" alt="Sakura Cheesecake" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Sakura Cheesecake</span>
+                            <span class="menu-item-price">10,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Eat It Anime Style! A fusion of creamy cheesecake with sakura essence.">
+                            Eat It Anime Style!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/Doroyaki.jpg" alt="Doroyaki" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Doroyaki</span>
+                            <span class="menu-item-price">4,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="A Japanese Real Treat! Soft pancakes filled with sweet red bean paste.">
+                            A Japanese Real Treat!
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/Mochi Rice cake.png" alt="Mochi Rice Cake" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Mochi Rice Cake</span>
+                            <span class="menu-item-price">5,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="It's Green, It Must Be Healthy, Right? Enjoy our fresh mochi rice cakes.">
+                            It's Green, It Must Be Healthy, Right?
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/Purin.jpg" alt="Purin" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Purin</span>
+                            <span class="menu-item-price">3,500 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Just Eat Don't Count Calories! Our creamy purin is irresistible.">
+                            Just Eat Don't Count Calories
+                        </p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="images/macaron.jpeg" alt="Macaron" class="menu-item-img" />
+                    <div class="menu-item-text">
+                        <h3 class="menu-item-heading">
+                            <span class="menu-item-name">Macaron</span>
+                            <span class="menu-item-price">9,000 IQD</span>
+                        </h3>
+                        <p class="menu-item-desc" data-hover-text="Have A Sweet Taste Of Every Rainbow Colour! Colorful and delicious macarons.">
+                            Have A Sweet Taste Of Every Rainbow Colour
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript for Hover Text Change -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const descElements = document.querySelectorAll('.menu-item-desc');
+
+            descElements.forEach(elem => {
+                const originalText = elem.textContent;
+                const hoverText = elem.getAttribute('data-hover-text');
+
+                elem.addEventListener('mouseenter', () => {
+                    elem.textContent = hoverText;
+                });
+
+                elem.addEventListener('mouseleave', () => {
+                    elem.textContent = originalText;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
